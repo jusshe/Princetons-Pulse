@@ -1,0 +1,31 @@
+html,
+body,
+#__next {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.bubble {
+  background-size: 1076px 1076px;
+  border-radius: 20%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
+  height: 115px;
+  position: absolute;
+  transition: opacity ease-in-out 1s;
+  width: 185px;
+}
+
+.bubbles {
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bubbles-wrapper {
+  background-color: rgb(255, 96, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
