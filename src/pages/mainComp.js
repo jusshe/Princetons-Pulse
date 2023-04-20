@@ -241,6 +241,56 @@ const MainComp = () => {
     animationRef.current = requestAnimationFrame(animate);
   }
 
+  return (
+    <div className="bubbles-wrapper">
+      <div className="bubbles">
+        {bubbles.map((bubble, index) => (
+          <Bubble bubble={bubble} index={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Bubble = ({ bubble, index }) => {
+  const colors = ["lightblue", "fuchsia", "lightgreen", "cornflowerblue"];
+
+  return (
+    <div
+      className="bubble"
+      id={`bubble-${index}`}
+      key={`${bubble.x} ${bubble.y}`}
+      style={{
+        transform: `translate(${bubble.x}px, ${bubble.y}px) scale(${bubble.s})`,
+        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: `${colors[Math.floor(Math.random() * 4)]}`,
+        padding: "10px",
+      }}
+    >
+      <BubbleText scale={bubble.s} />
+      <button
+        style={{
+          marginLeft: "65%",
+          marginRight: "5%",
+          marginBottom: "10%",
+          height: "15%",
+          backgroundColor: "orange",
+          border: "none",
+          borderRadius: "10%",
+          fontFamily: "Gill Sans",
+        }}
+      >
+        SAME!
+      </button>
+    </div>
+  );
+};
+
+export default MainComp;
+
+const BubbleText = ({ scale }) => {
   const [lows, setLows] = useState([
     "I failed my SOC midterm yesterday.",
     "I didn't get any of the 90 internships I applied to.",
@@ -248,35 +298,25 @@ const MainComp = () => {
     "I dropped out of BSE last semester and I still haven't found a way to tell my friends.",
     "I am graduating in two months, and I gotten a job yet or even figured out where I want to live.",
     "I have a C in math and its too late to drop or pdf.",
+    "I'm out of late days, and I'm too scared to ask for another extension.",
     "I missed my cousin's wedding last weekend to finish a paper and just found out I got a B- on it.",
     "I feel like I don't have any close friends at this school and I don't know how to make new ones.",
     "I applied to 46 internships this fall and didn't get a single interview.",
     "I studied for hours for COS and got a 75.",
+    "There is just not enough time in the day for me to finish my assignments due midnight.",
   ]);
-  const colors = ["lightblue", "fuchsia", "lightgreen", "cornflowerblue"];
+
+  const text = lows[Math.floor(Math.random() * lows.length)];
+
   return (
-    <div className="bubbles-wrapper">
-      <div className="bubbles">
-        {bubbles.map((bubble, index) => (
-          <div
-            className="bubble"
-            id={`bubble-${index}`}
-            key={`${bubble.x} ${bubble.y}`}
-            style={{
-              transform: `translate(${bubble.x}px, ${bubble.y}px) scale(${bubble.s})`,
-              justifyContent: "center",
-              display: "flex",
-              backgroundColor: `${colors[Math.floor(Math.random() * 4)]}`,
-            }}
-          >
-            <p style={{ width: "80%", maxHeight: "60%" }}>
-              {lows[Math.floor(Math.random() * lows.length)]}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <p
+      style={{
+        height: "85%",
+        padding: "5%",
+        fontFamily: "Gill Sans",
+      }}
+    >
+      {text}
+    </p>
   );
 };
-
-export default MainComp;
