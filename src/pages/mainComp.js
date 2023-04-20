@@ -245,7 +245,11 @@ const MainComp = () => {
     <div className="bubbles-wrapper">
       <div className="bubbles">
         {bubbles.map((bubble, index) => (
-          <Bubble bubble={bubble} index={index} />
+          <Bubble
+            bubble={bubble}
+            index={index}
+            key={`${bubble.x} ${bubble.y}`}
+          />
         ))}
       </div>
     </div>
@@ -269,8 +273,9 @@ const Bubble = ({ bubble, index }) => {
         padding: "10px",
       }}
     >
-      <BubbleText scale={bubble.s} />
+      <BubbleText scale={bubble.s} key={`${bubble.x} ${bubble.y}`} />
       <button
+        key={`${bubble.x} ${bubble.y}`}
         style={{
           marginLeft: "65%",
           marginRight: "5%",
@@ -290,7 +295,7 @@ const Bubble = ({ bubble, index }) => {
 
 export default MainComp;
 
-const BubbleText = ({ scale }) => {
+const BubbleText = ({ key }) => {
   const [lows, setLows] = useState([
     "I failed my SOC midterm yesterday.",
     "I didn't get any of the 90 internships I applied to.",
@@ -315,6 +320,7 @@ const BubbleText = ({ scale }) => {
         padding: "5%",
         fontFamily: "Gill Sans",
       }}
+      key={key}
     >
       {text}
     </p>
