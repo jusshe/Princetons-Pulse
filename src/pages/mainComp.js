@@ -310,6 +310,13 @@ const BubbleText = ({ key }) => {
     "I studied for hours for COS and got a 75.",
     "There is just not enough time in the day for me to finish my assignments due midnight.",
     "My thesis advisor hated 90% of the stuff I showed him at our checkpoint meeting yesterday.",
+    "I don’t have anything for summer",
+    "I’m a physics major, and I got a C from an introductory physics class. I feel miserable.",
+    " I feel like my math class is being taught in a different language.",
+    " I haven’t eaten with any friends since OA.",
+    " I sit alone and try to eat as quickly as possible in the dining hall every meal.",
+    " I feel like I am letting my coach down.",
+    " I believe my math professor graded my test harshly, and didn’t give me any partial points for the work I’ve done.",
   ]);
 
   const text = lows[Math.floor(Math.random() * lows.length)];
