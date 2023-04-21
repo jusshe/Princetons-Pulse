@@ -301,7 +301,7 @@ const BubbleText = ({ key }) => {
     "I didn't get any of the 90 internships I applied to.",
     "I haven't been to the gym a single time this semester.",
     "I dropped out of BSE last semester and I still haven't found a way to tell my friends.",
-    "I am graduating in two months, and I gotten a job yet or even figured out where I want to live.",
+    "I am graduating in two months, and I haven't gotten a job yet or figured out where I want to live.",
     "I have a C in math and its too late to drop or pdf.",
     "I'm out of late days, and I'm too scared to ask for another extension.",
     "I missed my cousin's wedding last weekend to finish a paper and just found out I got a B- on it.",
@@ -309,6 +309,7 @@ const BubbleText = ({ key }) => {
     "I applied to 46 internships this fall and didn't get a single interview.",
     "I studied for hours for COS and got a 75.",
     "There is just not enough time in the day for me to finish my assignments due midnight.",
+    "My thesis advisor hated 90% of the stuff I showed him at our checkpoint meeting yesterday.",
   ]);
 
   const text = lows[Math.floor(Math.random() * lows.length)];
