@@ -287,7 +287,7 @@ const Bubble = ({ bubble, index }) => {
           fontFamily: "Gill Sans",
         }}
       >
-        SAME!
+        {`${bubble.x}`}
       </button>
     </div>
   );
